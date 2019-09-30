@@ -6,10 +6,16 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidenavComponent,
+    DashboardComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
