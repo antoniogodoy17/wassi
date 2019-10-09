@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { TransactionsComponent } from './transactions/transactions.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TransactionsComponent } from './transactions/transactions.component';
     DashboardComponent,
     HeaderComponent,
     AccountsComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
