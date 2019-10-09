@@ -10,6 +10,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { AccountsComponent } from './accounts/accounts.component';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AccountsComponent } from './accounts/accounts.component';
     SidenavComponent,
     DashboardComponent,
     HeaderComponent,
-    AccountsComponent
+    AccountsComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,

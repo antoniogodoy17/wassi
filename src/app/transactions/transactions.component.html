@@ -1,0 +1,111 @@
+<app-sidenav></app-sidenav>
+
+<div class="content">
+	<app-header></app-header>
+
+	<div class="container">
+		<h1>Transactions</h1>
+
+		<div class="row">
+			<div class="col s12">
+				<a class="waves-effect waves-light btn btn-large modal-trigger" href="#transactionModal"><i class="material-icons left">add</i>Register Transaction</a>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col s12">
+				<table class="responsive-table">
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Account</th>
+							<th>Concept</th>
+							<th>Description</th>
+							<th>Type</th>
+							<th>Amount</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr *ngFor="let transaction of transactions">
+							<td>{{ transaction?.date }}</td>
+							<td>{{ transaction?.account }}</td>
+							<td>{{ transaction?.concept }}</td>
+							<td>{{ transaction?.description }}</td>
+							<td>{{ transaction?.type }}</td>
+							<td>{{ transaction?.amount | currency }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col s12 center-align">
+				<ul class="pagination">
+					<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+					<li class="active"><a href="#!">1</a></li>
+					<li class="waves-effect"><a href="#!">2</a></li>
+					<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div id="transactionModal" class="modal">
+	<div class="modal-content">
+		<h4>Create new Transaction</h4>
+
+		<div class="row">
+			<form class="col s12">
+					<div class="row">
+						<div class="input-field col s12 m6">
+							<i class="material-icons prefix">event</i>
+ 							<input id="date" type="text" class="datepicker">
+ 							<label for="date">Date</label>
+						</div>
+						<div class="input-field col s12 m6">
+							<i class="material-icons prefix">account_balance_wallet</i>
+							<select>
+								<option value="" disabled selected>Choose your option</option>
+								<option value="1">Option 1</option>
+								<option value="2">Option 2</option>
+								<option value="3">Option 3</option>
+							</select>
+							<label>Account</label>
+						</div>
+						<div class="input-field col s12 m6">
+							<i class="material-icons prefix">subject</i>
+							<input id="concept" type="text" class="validate">
+							<label for="concept">Concept</label>
+						</div>
+						<div class="input-field col s12 m6">
+							<i class="material-icons prefix">message</i>
+							<input id="description" type="text" class="validate">
+							<label for="description">Description</label>
+						</div>
+						<div class="input-field col s12 m6">
+							<i class="material-icons prefix">swap_vert</i>
+							<select>
+								<option value="" disabled selected>Choose your option</option>
+								<option value="income">Income</option>
+								<option value="expense">Expense</option>
+							</select>
+							<label>Type</label>
+						</div>
+						<div class="input-field col s12 m6">
+							<i class="material-icons prefix">attach_money</i>
+							<input id="amount" type="number" value="0" step="0.01" class="validate">
+							<label for="amount">Amount</label>
+						</div>
+					</div>
+			</form>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+		<a href="#!" class="modal-close waves-effect waves-green btn">Agree</a>
+	</div>
+</div>
